@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Massage.h"
+#include<string>
 using namespace std;
 User::User():name(" "),ID(" "){};
 User::User(string name , string ID): name(name),ID(ID){}
@@ -105,3 +106,36 @@ void quiz::set_attr(string t,int a,string* o){
     }
 }
 
+void SimpleMessage::printinfo(){
+    cout << this->msg << endl;
+    cout<<d<<endl;
+    cout<<user<<endl;
+    cout << "---------------------------"<<endl;
+}
+void PostMessage::printinfo(){
+    cout << this->imgPath<<endl;
+    cout<<d<<endl;
+    cout<<user<<endl;
+    cout << "---------------------------"<<endl;
+}
+void VoteMessage::printinfo(){
+    cout << this->Title<<endl;
+    for (int i=0;;i++){
+        if (this->options[i]!=""){
+            cout<<options[i]<<endl;
+        }
+    }
+    cout<<d<<endl;
+    cout<<user<<endl;
+    cout << "---------------------------"<<endl;
+}
+void quiz::printinfo(){
+    cout << this->Title<<endl;
+    for (int i=0;i<10;i++){
+        cout<<1<<") "<<options[i]<<endl;
+    }
+    cout << "The answer is:"<< Ans<<")"<<this->options[this->Ans-1]<<endl;
+    // cout<<d<<endl;
+    // cout<<user<<endl;
+    cout << "---------------------------"<<endl;
+}
