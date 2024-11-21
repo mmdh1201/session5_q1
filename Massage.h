@@ -41,7 +41,7 @@ class BaseMessage
         BaseMessage();
         BaseMessage(int , User);
         ~BaseMessage();
-        void printinfo();
+        virtual void printinfo();
 };
 
 class SimpleMessage : public BaseMessage
@@ -50,6 +50,7 @@ class SimpleMessage : public BaseMessage
     string msg;
     public:
     void setBaseAttr(User , int);
+    void printinfo();
     SimpleMessage();
     SimpleMessage(string , User, int);
     ~SimpleMessage();
@@ -62,6 +63,7 @@ class PostMessage : public SimpleMessage
     public:
     PostMessage();
     PostMessage(string , User, int);
+    void printinfo();
     ~PostMessage();
 };
 
@@ -73,6 +75,7 @@ class VoteMessage : public BaseMessage
     public:
     void setBaseAttr(User , int);
     void print_op();
+    void printinfo();
     VoteMessage();
     VoteMessage(string , string* , User, int);
     ~VoteMessage();
@@ -87,6 +90,7 @@ class quiz:public VoteMessage
         ~quiz();
         void set_attr(string,int,string*);
         void set_optios(string*);
+        void printinfo();
         string answer(int);
 };
 
