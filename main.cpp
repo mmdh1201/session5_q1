@@ -51,7 +51,7 @@ int main(){
             index ++;
         }
         if(status == 3){
-            string Options[10];
+            string Options[3];
             cout<<"enter your options: "<<endl;
             for (int i=0;i<10;i++){
                 cin>>Options[i];
